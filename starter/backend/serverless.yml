@@ -33,6 +33,7 @@ functions:
       - http:
           method: get
           path: todos
+          authorizer: Auth
           cors: true
     iamRoleStatements:
       - Effect: Allow
@@ -54,6 +55,7 @@ functions:
       - http:
           method: post
           path: todos
+          authorizer: Auth
           cors: true
           request:
             schemas:
@@ -76,6 +78,7 @@ functions:
       - http:
           method: patch
           path: todos/{todoId}
+          authorizer: Auth
           cors: true
           request:
             schemas:
@@ -100,6 +103,7 @@ functions:
       - http:
           method: delete
           path: todos/{todoId}
+          authorizer: Auth
           cors: true
     iamRoleStatements:
     - Effect: Allow
@@ -118,6 +122,7 @@ functions:
     events:
       - http:
           method: post
+          authorizer: Auth
           path: todos/{todoId}/attachment
           cors: true
     iamRoleStatements:
